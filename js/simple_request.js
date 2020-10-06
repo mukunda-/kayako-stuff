@@ -12,9 +12,8 @@ let spam_setting = promptQuit(
 await (fetch( "/api/v1/settings", {
    method      : "PUT",
    credentials : 'omit',
-   headers     : {
-      "Content-type" : "application/json",
-      "Authorization": `Basic ${btoa(username+":"+password)}`
+   headers     : { "Content-type" : "application/json",
+                   "Authorization": `Basic ${btoa(username+":"+password)}`
    },
    body: JSON.stringify({values:{"email.spam_score":spam_setting}})
 }).then(e => e.json()));
