@@ -58,6 +58,6 @@ def request( method, endpoint, query = None, body = None ):
 settings = request( "get", "/api/v1/settings" )
 
 for setting in settings["data"]:
-    if setting["category"] == "email" and setting["name"] == "spam_score":
-        print( f"Spam setting is {setting['value']}." )
-        break
+   if setting["category"] == "email" and setting["name"] == "spam_score":
+      print( f"Spam setting is {setting['value']}." )
+      break
