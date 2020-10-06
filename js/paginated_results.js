@@ -4,10 +4,12 @@
 // up into pages. You can potentially set the limit to be very high to avoid handling
 // paged results when you want to work on a complete set, but I’m not sure what the actual
 // limit is. Keep in mind that this is bad practice when working with large data sets. If
-// you want to process everything, you should work on it like a stream. Here is a function
-// to download a complete resource by combining the pages together. I recommend setting a
-// higher limit in the query to avoid too many chained API calls. Default limit is 10.
-// (see complex_request.js for request function)
+// you want to process everything, you should work on it like a stream. Here are functions
+// to operate on the complete data set.
+//
+// I recommend setting a higher limit in the query to avoid too many chained API calls.
+// Limit can be set with the query argument `limit`. Default limit is 10. (see
+// complex_request.js for `request` function)
 //////////////////////////////////////////////////////////////////////////////////////////
 
 //----------------------------------------------------------------------------------------
