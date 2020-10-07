@@ -8,7 +8,6 @@ start_at = end_at - datetime.timedelta( days = 30 )
 #  only get the ID.
 teams = request( "get", "/api/v1/teams?include=team" )["data"]
 
-
 #------------------------------------------------------------------------------
 for team in teams:
    print( "\n-----------------------------------------" )
