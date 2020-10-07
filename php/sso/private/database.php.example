@@ -1,0 +1,18 @@
+<?php
+
+// Test "database"
+$database = [
+    "login" => "https://example.com/login_url",
+    "logout" => "https://example.com/logout_url",
+    "kayako" => "yourcompany.kayako.com";
+    // Set in the Kayako settings.
+    "shared_secret" => '#*jJ#(KRhsdfh)Vm ...#CPRgasfa',
+    "users" => [
+        "mukunda" => [
+            "name" => "Mukunda Johnson",
+            "email" => "myemail@domain.com",
+            "password" => "Password;)",
+            "role" => "admin"
+        ]
+    ]
+];
