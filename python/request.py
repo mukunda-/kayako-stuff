@@ -1,7 +1,7 @@
 # A template for calling the Kayako API with user credentials.
 # (C) 2020 Mukunda Johnson
 #-----------------------------------------------------------------------------------------
-import json, re, urllib, datetime, getpass
+import json, urllib, getpass
 from http.client import HTTPSConnection
 from base64 import b64encode
 
