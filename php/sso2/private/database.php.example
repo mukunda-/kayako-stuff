@@ -1,0 +1,14 @@
+<?php
+
+// Test "database"
+$database = [
+    "login" => "https://example.com/login_url",
+	
+	// Not used for this example.
+    //"logout" => "https://example.com/logout_url",
+	
+    "kayako" => "yourcompany.kayako.com";
+	
+    // Set in the Kayako settings.
+    "shared_secret" => 'copy key from kayako',
+];

@@ -125,7 +125,6 @@ function Run() {
     global $logged_in;
     Login();
 
-    
     if( !$logged_in ) return;
     echo "
         <form>
