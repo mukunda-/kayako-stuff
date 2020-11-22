@@ -39,7 +39,7 @@ Setup required to test
 
 (5) Test.
 
-    1. Visit https://localhost to test SimpleSAML admin site. The admin password is
+    1. Visit https://localhost to test the SimpleSAML admin site. The admin password is
        "securepassword123" by default.
     2. Ignore any SSL certificate errors. A self-signed certificate is generated for an
        https connection (and only https is supported by the nginx config provided).

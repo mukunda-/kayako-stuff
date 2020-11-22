@@ -9,13 +9,20 @@ $attributes = $as->getAttributes();
 
 // The Kayako SSO secret is shared through a claim.
 $kayakoSecret = $attributes['KayakoSecret'][0];
-
+var_dump($attributes);
 // Email, name, and role are the bare minimum that need to be specified to log into
 //  Kayako. Role dictates what permissions they have in the Kayako Agent Area, which can
 //  be "owner", "admin", "agent", "collaborator", or "customer".
 // We should be pulling this from a claim or transforming it from another set of
 //                                             permissions for the Azure AD user.
-$email = $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'][0];
+if( isset( $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'] )) {
+   // Big caveat here. Email might not be set for the user, but this is required for Kayako.
+   $email = $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'][0];
+} else {
+   // We're falling back to their username, which should *usually* be an email address format,
+   //  but that might not always be the case. This logic should be adjusted according to needs.
+   $email = $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'][0];
+}
 $name  = $attributes['http://schemas.microsoft.com/identity/claims/displayname'][0];
 $role  = 'agent'; // TODO, pull this from a claim.
 
@@ -62,5 +69,8 @@ if( $returnto == "" ) {
    $kayakoURL = $attributes['KayakoURL'][0];
    $returnto = "$kayakoURL/Base/SSO/JWT/?type=agent&action=/agent";
 }
+
+// Somewhere around here, extra work could potentially be done to -update- the user's
+//  profile in Kayako according to what claims are current.
 
 header( "Location: $returnto&jwt=$jwt" );
