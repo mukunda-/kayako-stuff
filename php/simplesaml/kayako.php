@@ -9,7 +9,7 @@ $attributes = $as->getAttributes();
 
 // The Kayako SSO secret is shared through a claim.
 $kayakoSecret = $attributes['KayakoSecret'][0];
-var_dump($attributes);
+
 // Email, name, and role are the bare minimum that need to be specified to log into
 //  Kayako. Role dictates what permissions they have in the Kayako Agent Area, which can
 //  be "owner", "admin", "agent", "collaborator", or "customer".
