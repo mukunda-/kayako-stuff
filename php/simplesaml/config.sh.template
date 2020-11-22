@@ -1,0 +1,11 @@
+#!/bin/bash
+# Rename this to config.sh and adjust properties accordingly.
+
+# This needs to match the Identifier (Entity ID) in the SAML SSO configuration.
+SSO_EntityID=MJohnsonKayakoTest
+
+# Admin password to log in to SimpleSAML admin tools.
+SS_AdminPassword=securepassword123
+
+# Randomize secret salt.
+SS_SecretSalt=$(LC_CTYPE=C tr -c -d '0123456789abcdefghijklmnopqrstuvwxyz' </dev/urandom | dd bs=32 count=1 2>/dev/null)
