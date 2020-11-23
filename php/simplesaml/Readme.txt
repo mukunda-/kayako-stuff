@@ -29,7 +29,7 @@ Setup required to test
 (3) Build and run Docker image. It will capture the current folder and configuration files.
 
     1. docker build --tag kayako_saml_test .
-    2. docker run kayako_saml_test
+    2. docker run -it -p 443:443 kayako_saml_test
 
 (4) Kayako SSO setup.
 
